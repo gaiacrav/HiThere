@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :created_chatrooms, class_name: "Chatroom", foreign_key: 'creator_id'
+
+  validates :first_name, :age, presence: true
 end
