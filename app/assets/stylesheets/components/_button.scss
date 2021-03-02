@@ -2,7 +2,7 @@
   color: #ffffff;
   font-size: 16px;
   background-color: #E50914 ;
-  border: 1px solid red;
+  border: 1px solid #E50914;
   padding: 7px 17px;
   border-radius: 3px;
   font-weight: bold;
@@ -16,4 +16,9 @@
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+// Sign up page in the homepage
+#sign-up {
+  width: 300px;
 }
