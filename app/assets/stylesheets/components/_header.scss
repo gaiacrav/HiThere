@@ -29,8 +29,12 @@
 }
 
 
-// login form: signup & forgot your pssw links 
+// login form: signup & forgot your pssw links
 .input {
   color: #e50914;
   margin-top: 2px;
+}
+
+.input:hover {
+  color: white;
 }
