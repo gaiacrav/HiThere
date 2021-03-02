@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [:create, :show]
   end
 
-  resources :chatrooms, only: [:show] do
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: [:create]
   end
 
-  resources :users
+  resources :users do
+    collection do
+      get :me
+    end
+  end
 
   resources :preferences do
     collection do
@@ -19,6 +23,4 @@ Rails.application.routes.draw do
     end
   end
 
-
- # get "my_bookings", to: "pages#my_bookings"
 end
