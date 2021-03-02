@@ -1,4 +1,4 @@
 class Preference < ApplicationRecord
   belongs_to :user
-  belongs_to :medium
+  belongs_to :video
 end
