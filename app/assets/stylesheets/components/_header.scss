@@ -1,3 +1,4 @@
+// homepage header
 .header {
   font-size: 50px;
   color: white;
@@ -5,9 +6,35 @@
   margin-top: 20px;
 }
 
+// homepage subheader
 .header-sub {
   font-size: 24px;
   color: white;
   text-align: center;
   margin-top: 20px;
+}
+
+// login form: title
+.header-medium {
+  color: white;
+  font-size: 24px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+// login form: email, pssw
+.form-inputs {
+  color: white;
+}
+
+
+// login form: signup & forgot your pssw links
+.input {
+  color: #e50914;
+  margin-top: 2px;
+}
+
+.input:hover {
+  color: white;
 }
