@@ -1,0 +1,17 @@
+.white-characters {
+    color: white;
+}
+
+.user-show-container {
+    width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.avatar-user-show {
+    width: 100px;
+    border-radius: 50%;
+  }
