@@ -24,14 +24,6 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
-  create_table "media", force: :cascade do |t|
-    t.string "title"
-    t.string "genre"
-    t.string "kind"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -44,11 +36,11 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
 
   create_table "preferences", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "media_id", null: false
+    t.bigint "video_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["media_id"], name: "index_preferences_on_media_id"
     t.index ["user_id"], name: "index_preferences_on_user_id"
+    t.index ["video_id"], name: "index_preferences_on_video_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,10 +61,18 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.string "kind"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "chatrooms", "users"
   add_foreign_key "chatrooms", "users", column: "creator_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "preferences", "media", column: "media_id"
   add_foreign_key "preferences", "users"
+  add_foreign_key "preferences", "videos"
 end

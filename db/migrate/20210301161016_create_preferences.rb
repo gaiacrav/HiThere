@@ -2,7 +2,7 @@ class CreatePreferences < ActiveRecord::Migration[6.0]
   def change
     create_table :preferences do |t|
       t.references :user, null: false, foreign_key: true
-      t.references :media, null: false, foreign_key: true
+      t.references :video, null: false, foreign_key: true
 
       t.timestamps
     end
