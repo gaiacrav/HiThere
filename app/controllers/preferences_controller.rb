@@ -1,9 +1,5 @@
 class PreferencesController < ApplicationController
 
-  def show
-    raise
-  end
-
   def matches
     # Eliseu: just an idea for a first criteria definition:
     # match_country = current_user.country
