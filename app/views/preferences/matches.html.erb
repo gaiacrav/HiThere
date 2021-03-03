@@ -1,6 +1,6 @@
 <div class="home-container">
-  <h1 class="header"> Your top matches  </h1>
-  <h5 id="dashboard-sub"> Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
+  <h1 class="header"> Your top matches </h1>
+  <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> you have many matches, start chatting now 💬 </h5>
 
 
   <% @users.each do |user| %>
