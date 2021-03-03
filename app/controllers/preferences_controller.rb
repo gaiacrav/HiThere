@@ -1,5 +1,7 @@
 class PreferencesController < ApplicationController
 
+skip_before_action :verify_authenticity_token
+
   def matches
     # Eliseu: just an idea for a first criteria definition:
     # match_country = current_user.country
@@ -11,4 +13,29 @@ class PreferencesController < ApplicationController
     @matches = User.all
   end
 
+  def new
+    @preference = Preference.new
+    @videos = Video.all
+  end
+
+  def create
+    @user = current_user
+    @videos = Video.all
+    current_user.videos.destroy_all
+    params['array'].each do |key, value|
+      Preference.create(video: @videos[key.to_i], user: @user)
+    end #redirect to dashboard - Sara
+    redirect_to new_preference_path
+  end
+
+  def show
+    @preferences = preference.search(params[:search])
+  end
+
+
+private
+
+  def preferences_params
+    params.require(:preferences).permit(:user_id, :video_id)
+  end
 end
