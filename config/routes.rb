@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  authenticated :user do
+    root to: 'preferences#matches' , as: :authenticated_root
+  end
+  root "pages#home"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :preferences, only: [] do
@@ -21,3 +25,4 @@ Rails.application.routes.draw do
   end
 
 end
+
