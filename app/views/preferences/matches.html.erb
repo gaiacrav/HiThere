@@ -7,8 +7,8 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
     <div>
-    <h2 class="card-user"> <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.age %> years old) </h2>
-    <p class="card-user"> <strong> Country: </strong> <%= current_user.country %> </p>
+    <h2 class="card-user"> <%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.country %>) </h2>
+    <p class="card-user"> <strong> Age: </strong> <%= current_user.age %> years old </p>
     </div>
     <div id="card-buttons">
     <%= link_to "Profile", "#", class: "btn btn-ghost m-2 "%>
