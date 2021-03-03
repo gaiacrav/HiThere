@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :preferences do
-    resources :chatrooms, only: [:create, :show]
+  resources :preferences, only: [] do
+    collection do
+      get :matches
+    end
+      resources :chatrooms, only: [:create, :show]
   end
 
   resources :chatrooms, only: [:show, :index] do
@@ -14,12 +17,6 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :me
-    end
-  end
-
-  resources :preferences do
-    collection do
-      get :matches
     end
   end
 
