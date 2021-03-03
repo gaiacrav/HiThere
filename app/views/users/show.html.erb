@@ -2,9 +2,29 @@
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-show" %>
   <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%><h5>
 
-<p class="white-characters">Email: <%= @user.email%></p>
-<p class="white-characters">Country: <%= @user.country%></p>
-<p class="white-characters">Gender: <%= @user.gender%></p>
+</div>
+<div id="user-show-bottom-container">
+  <div id="user-show-left-column">
+    <div id="user-show-about-me">
+      <h6 >About me</h6>
+      <p id="user-show-small-font">Email: <%= @user.email%></p>
+      <p id="user-show-small-font">Country: <%= @user.country%></p>
+      <p id="user-show-small-font">Gender: <%= @user.gender.capitalize%></p>
+    </div>
+    <div id="user-show-top-3">
+      <h6>My top 3 rated series</h6>
+      <p>Email: <%= @user.email%></p>
+      <p>Country: <%= @user.country%></p>
+      <p>Gender: <%= @user.gender%></p>
+    
+    </div>
 
+  </div>
+
+  <div id="user-show-right-column">
+    <h6 style="margin-bottom: 20px">My friends</h6>
+    <%= render "components/show-friends"%>
+  </div>
 
 </div>
+

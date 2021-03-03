@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
+      @users =User.all # Eliseu: This must be changed to filter only friends
     end
   
     # def edit
