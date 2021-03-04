@@ -1,8 +1,11 @@
 <!-- Just placeholder code, for now -->
 
 <%@users.each do |user|%>
-  
-  <p id="user-show-medium-font"><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-show-friend" %>   <%= user.first_name %> <%= user.last_name %> </p>
- 
-  
+  <% if user.photo.attached? %>
+  <p> <%= cl_image_tag(user.photo.key, class: "avatar-user-show-friend")%> <%= user.first_name %> <%= user.last_name %></p>
+  <% else %>
+  <p><%= image_tag("fakepic.png", class: "avatar-user-show-friend") %> <%= user.first_name %> <%= user.last_name %></p>
+  <% end %>
 <% end %>
+
+
