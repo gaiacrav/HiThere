@@ -15,24 +15,9 @@
     width: 900px;
     height: 20px;
     margin: auto;
-    justify-content: space-between;
     display: flex;
+    justify-content: space-between;
   }
-
-#user-show-middle-container-left {
-  padding-left: 12px;
-  font-size: 12px;
-  text-align: right;
-  color:#EEEEEE;
-  text-decoration: none;
-}
-
-#user-show-middle-container-right {
-  padding-right: 12px;
-  font-size: 12px;
-  text-align: right;
-  color:#EEEEEE;
-}
 
   .avatar-user-show {
     width: 72px;
@@ -60,7 +45,7 @@
 
 #user-show-about-me {
   padding: 12px;
-  height: 46%;
+  height: 52%;
   background-color: rgb(27, 27, 27);
   color: white;
   display: flex;
@@ -69,7 +54,7 @@
 
 #user-show-top-3 {
   padding: 12px;
-  height: 46%;
+  height: 40%;
   background-color: rgb(27, 27, 27);
   color: white;
 

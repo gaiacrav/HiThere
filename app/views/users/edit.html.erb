@@ -1,0 +1,26 @@
+<div class="user-edit-container">
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-edit" %>
+
+</div>
+  
+<div id="user-edit-main-container" >  
+  <div>  
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :country %>
+      <%= f.input :gender %>
+      <%= f.input :age %>
+      <div style="text-align: right">
+        <%= f.button :submit, class: "btn user-edit-update-button" %>
+      </div>
+    <% end %>
+  </div>
+</div> 
+
+<div id="user-edit-bottom-container">
+    <%= link_to "Back", user_path, class: "btn user-edit-back-button mt-2 ms-0" %>
+</div>
+
+
