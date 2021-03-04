@@ -3,21 +3,26 @@
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> tell us more about your favorite movies! </h5>
 
 
-  <form>
-    <div>
-      <div class="col-auto">
-        <label class="mr-sm-2" for="inlineFormCustomSelect"> Choose by <span id="name"> <strong>genre </strong> </span> </label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Select a genre...</option>
-            <% @genres.each do |genre| %>
-              <option value="1"> <%= genre.name %> </option>
-            <%end%>
-        </select>
-        <button type="submit" class="btn btn-ghost ml-0 mt-2">Submit</button>
-      </div>
-    </div>
-  </form>
 
+    <%= simple_form_for new_preference_path, method: :get do |f| %>
+      <%= f.input :genre, collection: @genres %>
+      <%= f.submit "submit", class:"btn btn-ghost ml-0 mt-2"%>
+    <% end %>
+
+
+<form action="/preferences" method="post">
+  <% counter=0 %>
+  <% @videos.each do |video| %>
+   <% if current_user.videos.where(id: video.id)!=[] %>
+   <i class="fas fa-check"></i>
+    <% end %>
+  <input type="checkbox" name=array[<%= counter %>]>
+    <label for=<%= video.title %>> <%= video.title %> </label>
+    <p> <%= video.genre %> </p>
+    <p> <%# video.kind %> </p>
+   <% counter+=1 %>
+  <% end %>
+  <input type="submit" value="submit">
+</form>
 
 </div>
-

@@ -1,4 +1,5 @@
 class PreferencesController < ApplicationController
+
 skip_before_action :verify_authenticity_token
 
   def matches
@@ -12,9 +13,13 @@ skip_before_action :verify_authenticity_token
   end
 
   def new
-    @preference = Preference.new
-    @videos = Video.all.limit(10)
     @genres = Genre.all
+    if params["/preferences/new"].present?
+      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(2)
+    else
+      @videos = Video.all
+    end
+    @preference = Preference.new
   end
 
   def create
@@ -24,7 +29,7 @@ skip_before_action :verify_authenticity_token
     params['array'].each do |key, value|
       Preference.create(video: @videos[key.to_i], user: @user)
     end #redirect to dashboard - Sara
-    redirect_to new_preference_path
+    redirect_to matches_preferences_path
   end
 
   def show
