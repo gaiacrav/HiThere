@@ -1,6 +1,6 @@
 <div class="user-show-container">
   <% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @user.photo.key, class: "avatar-user-show" %>
   <% else %>
   <%= image_tag("fakepic.png") %>
   <% end %>
@@ -36,8 +36,7 @@
 
   <div id="user-show-right-column">
     <h6 style="margin-bottom: 20px">My friends</h6>
-    <%= render "components/show-friends"%>
-    <div style="flex-grow:1"></div>
+    <%=render "components/show-friends"%>
     <p id="user-show-minimal-font">view more...</p>
   </div>
 </div>
