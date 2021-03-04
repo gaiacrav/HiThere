@@ -16,10 +16,13 @@
         <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email %></p>
         <p id="user-show-small-font"><%= image_tag "country-icon", class: "user-show-icon" %>  <%= @user.country%></p>
         <p id="user-show-small-font"><%= image_tag "gender-icon", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
+        <p id="user-show-small-font"><%= image_tag "age-icon", class: "user-show-icon" %> <%= @user.age%></p>
       </div>
       <div >
-      <%= link_to "✎ edit", "#", id: "user-show-edit-button"  %>
-      </div>
+        <% if @user == current_user%>
+          <%= link_to "✎ edit", edit_user_path, id: "user-show-edit-button"  %>
+        <%end%>
+        </div>
     </div>
     <div id="user-show-top-3">
       <h6>My top 3 rated series</h6>
