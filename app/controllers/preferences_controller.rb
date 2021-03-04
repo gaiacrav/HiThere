@@ -9,8 +9,7 @@ skip_before_action :verify_authenticity_token
 
     # @matches = User.where(country: match_country).or(User.where(genre: match_genre))
     # Eliseu: Not sure about this - still needs validation from a TA
-
-    @matches = User.all
+    @users = User.all
   end
 
   def new
