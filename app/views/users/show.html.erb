@@ -2,7 +2,7 @@
   <% if @user.photo.attached? %>
   <%= cl_image_tag @user.photo.key, class: "avatar-user-show" %>
   <% else %>
-  <%= image_tag("fakepic.png") %>
+  <%= image_tag("fakepic.png", class: "avatar-user-show") %>
   <% end %>
   <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%></h5>
 </div>
