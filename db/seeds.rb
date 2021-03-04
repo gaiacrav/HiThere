@@ -29,5 +29,13 @@ filepath = 'db/top1000movies.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
   puts "#{row["Title"]} | #{row["Genre"]} | #{row["Description"]} | #{row["Year"]} | #{row["Runtime (Minutes)"]}"
+  video = Video.create!(title: row["Title"], kind: "Movie")
+
+  genres_string = row["Genre"]
+  genres_string.split(",").each do |genre_name|
+    genre = Genre.find_or_create_by!(name: genre_name)
+    VideosGenre.create!(video_id: video.id, genre_id: genre.id)
+  end
 end
+
 

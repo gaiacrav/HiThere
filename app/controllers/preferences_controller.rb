@@ -1,5 +1,4 @@
 class PreferencesController < ApplicationController
-
 skip_before_action :verify_authenticity_token
 
   def matches
@@ -14,7 +13,8 @@ skip_before_action :verify_authenticity_token
 
   def new
     @preference = Preference.new
-    @videos = Video.all
+    @videos = Video.all.limit(10)
+    @genres = Genre.all
   end
 
   def create
