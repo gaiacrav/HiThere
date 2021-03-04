@@ -3,28 +3,17 @@
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> tell us more about your favorite movies! </h5>
 
 
-  <%# @genres.each do |genre| %>
-    <p> <%# genre.name %> </p>
-  <%#end%>
-
   <form>
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
+    <div>
+      <div class="col-auto">
         <label class="mr-sm-2" for="inlineFormCustomSelect"> Choose by <span id="name"> <strong>genre </strong> </span> </label>
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Select movies...</option>
+          <option selected>Select a genre...</option>
             <% @genres.each do |genre| %>
               <option value="1"> <%= genre.name %> </option>
             <%end%>
         </select>
-      </div>
-      <div class="col-auto my-1">
-        <div class="custom-control custom-checkbox mr-sm-2">
-          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-        </div>
-      </div>
-      <div class="col-auto my-1">
-        <button type="submit" class="btn btn-ghost">Submit</button>
+        <button type="submit" class="btn btn-ghost ml-0 mt-2">Submit</button>
       </div>
     </div>
   </form>
