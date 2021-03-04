@@ -15,7 +15,8 @@ skip_before_action :verify_authenticity_token
   def new
     @genres = Genre.all
     if params["/preferences/new"].present?
-      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(2)
+      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(50)
+      @count = @videos.count
     else
       @videos = Video.all
     end
@@ -30,6 +31,7 @@ skip_before_action :verify_authenticity_token
       Preference.create(video: @videos[key.to_i], user: @user)
     end #redirect to dashboard - Sara
     redirect_to matches_preferences_path
+    @preferences.save!
   end
 
   def show
