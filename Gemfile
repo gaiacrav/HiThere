@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'country-select'
 gem 'faker'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
 
