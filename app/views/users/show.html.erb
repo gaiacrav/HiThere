@@ -12,8 +12,8 @@
   <div id="user-show-left-column">
     <div id="user-show-about-me">
       <div>
-        <h6 >About me</h6>
-        <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email %></p>
+        <h6> <strong> About me </strong> </h6>
+        <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email%></p>
         <p id="user-show-small-font"><%= image_tag "country-icon", class: "user-show-icon" %>  <%= @user.country%></p>
         <p id="user-show-small-font"><%= image_tag "gender-icon", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
         <p id="user-show-small-font"><%= image_tag "age-icon", class: "user-show-icon" %> <%= @user.age%></p>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div id="user-show-top-3">
-      <h6>My top 3 rated series</h6>
+      <h6> <strong> My top 3 rated series </strong> </h6>
       <p id="user-show-small-font">Email: <%= @user.email %></p>
       <p id="user-show-small-font">Country: <%= @user.country%></p>
       <p id="user-show-small-font">Gender: <%= @user.gender%></p>
@@ -35,7 +35,7 @@
   </div>
 
   <div id="user-show-right-column">
-    <h6 style="margin-bottom: 20px">My friends</h6>
+    <h6 style="margin-bottom: 20px"> <strong> My friends </strong> </h6>
     <%=render "components/show-friends"%>
     <p id="user-show-minimal-font">view more...</p>
   </div>
