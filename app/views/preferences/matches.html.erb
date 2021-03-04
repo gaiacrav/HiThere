@@ -3,7 +3,7 @@
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> you have many matches, start chatting now 💬 </h5>
 
 
-  <% @users.each do |user| %>
+  <% @users.reject { |u| u == current_user}.each do |user| %>
     <div class="card-product">
       <% if user.photo.attached? %>
         <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
@@ -23,4 +23,5 @@
     </div>
   <%end%>
 </div>
+
 
