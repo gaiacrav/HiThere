@@ -1,7 +1,10 @@
 <div class="home-container">
   <h1 class="header"> Meet other series enthusiasts <h1>
   <h5 class="header-sub"> This is a subheader <h5>
-
+  <% if !user_signed_in?  %>
   <%= render "components/buttonSignup"%>
+  <% else %>
+  <%= link_to "Choose your preference", new_preference_path, class: "btn btn-danger" %>
+  <% end %>
   <%= render "components/card"%>
 </div>

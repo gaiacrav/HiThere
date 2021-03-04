@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  resources :preferences, only: [] do
+  resources :videos, only: [:index]
+  resources :preferences, only: [:new, :create] do
     collection do
       get :matches
     end
@@ -23,6 +23,5 @@ Rails.application.routes.draw do
       get :me
     end
   end
-
 end
 
