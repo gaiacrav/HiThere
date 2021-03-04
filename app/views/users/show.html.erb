@@ -3,28 +3,40 @@
   <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%><h5>
 
 </div>
+  
+</div>
 <div id="user-show-bottom-container">
   <div id="user-show-left-column">
     <div id="user-show-about-me">
-      <h6 >About me</h6>
-      <p id="user-show-small-font">Email: <%= @user.email%></p>
-      <p id="user-show-small-font">Country: <%= @user.country%></p>
-      <p id="user-show-small-font">Gender: <%= @user.gender.capitalize%></p>
+      <div>
+        <h6 >About me</h6>
+        <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email %></p>
+        <p id="user-show-small-font"><%= image_tag "country-icon", class: "user-show-icon" %>  <%= @user.country%></p>
+        <p id="user-show-small-font"><%= image_tag "gender-icon", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
+      </div>
+      <div >
+      <%= link_to "✎ edit", "#", id: "user-show-edit-button"  %>
+      </div>
     </div>
     <div id="user-show-top-3">
       <h6>My top 3 rated series</h6>
-      <p>Email: <%= @user.email%></p>
-      <p>Country: <%= @user.country%></p>
-      <p>Gender: <%= @user.gender%></p>
-    
+      <p id="user-show-small-font">Email: <%= @user.email%></p>
+      <p id="user-show-small-font">Country: <%= @user.country%></p>
+      <p id="user-show-small-font">Gender: <%= @user.gender%></p>
+      <div style="flex-grow:1"></div>
+      <p id="user-show-minimal-font">view more...</p>
     </div>
-
   </div>
 
   <div id="user-show-right-column">
     <h6 style="margin-bottom: 20px">My friends</h6>
     <%= render "components/show-friends"%>
+    <div style="flex-grow:1"></div>
+    <p id="user-show-minimal-font">view more...</p>
   </div>
-
 </div>
-
+<div class="user-show-middle-container">
+  <div>
+    <%= render "components/back-button"%>
+  </div>
+</div>

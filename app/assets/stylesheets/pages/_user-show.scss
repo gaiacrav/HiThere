@@ -4,15 +4,38 @@
 
 .user-show-container {
     width: 900px;
+    height: 140px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  .user-show-middle-container {
+    width: 900px;
+    height: 20px;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+  }
+
+#user-show-middle-container-left {
+  padding-left: 12px;
+  font-size: 12px;
+  text-align: right;
+  color:#EEEEEE;
+  text-decoration: none;
+}
+
+#user-show-middle-container-right {
+  padding-right: 12px;
+  font-size: 12px;
+  text-align: right;
+  color:#EEEEEE;
+}
 
   .avatar-user-show {
-    width: 100px;
+    width: 72px;
     border-radius: 50%;
   }
 
@@ -26,11 +49,10 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    flex-shrink: 1;
   }
 
 #user-show-left-column {
-  width: 40%;
+  width: 48%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,21 +60,24 @@
 
 #user-show-about-me {
   padding: 12px;
-  height: 47%;
+  height: 46%;
   background-color: rgb(27, 27, 27);
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 #user-show-top-3 {
   padding: 12px;
-  height: 47%;
+  height: 46%;
   background-color: rgb(27, 27, 27);
   color: white;
+
 }
 
 #user-show-right-column {
   padding: 12px;
-  width: 30%;
+  width: 48%;
   background-color: rgb(27, 27, 27);
   color: white;
 }
@@ -65,4 +90,20 @@
   font-size: 18px;
 }
 
+#user-show-minimal-font {
+  font-size: 12px;
+  text-align: right;
+  color:#EEEEEE;
+}
+
+.user-show-icon {
+  width: 30px;
+  border-radius: 50%;  
+}
+
+#user-show-edit-button {
+  font-size: 12px;
+  text-align: right;
+  color: #EF0914;
+}
 
