@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_181449) do
+ActiveRecord::Schema.define(version: 2021_03_04_112644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["creator_id"], name: "index_chatrooms_on_creator_id"
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -63,10 +69,18 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
 
   create_table "videos", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
     t.string "kind"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "videos_genres", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_videos_genres_on_genre_id"
+    t.index ["video_id"], name: "index_videos_genres_on_video_id"
   end
 
   add_foreign_key "chatrooms", "users"
@@ -75,4 +89,6 @@ ActiveRecord::Schema.define(version: 2021_03_01_181449) do
   add_foreign_key "messages", "users"
   add_foreign_key "preferences", "users"
   add_foreign_key "preferences", "videos"
+  add_foreign_key "videos_genres", "genres"
+  add_foreign_key "videos_genres", "videos"
 end
