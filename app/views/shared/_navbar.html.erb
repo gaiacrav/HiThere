@@ -15,7 +15,11 @@
           <strong> Hi <%= current_user.first_name %>! </strong>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "gaia.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag "fakepic.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", user_path(current_user.id), class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
