@@ -1,8 +1,16 @@
 class Video < ApplicationRecord
-  has_many :prefeneces
+  has_many :preferences
   has_many :users, through: :preferences
+  has_many :videos_genres
+  has_many :genres, through: :videos_genres
 
   validates :title, presence: true
-  validates :genre, inclusion: { in: %w(romantic horror thriller scienceFiction comedy suspence historical documentary others),
-   case_sensitive: false, message: "%{value} is not a valid genre" }
+
+  def genre
+    genre_names_array = genres.map do |genre|
+      genre.name
+    end
+    genre_names_array.join(", ")
+  end
+
 end
