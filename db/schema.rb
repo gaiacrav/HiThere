@@ -45,6 +45,12 @@ ActiveRecord::Schema.define(version: 2021_03_04_133738) do
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -84,10 +90,18 @@ ActiveRecord::Schema.define(version: 2021_03_04_133738) do
 
   create_table "videos", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
     t.string "kind"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "videos_genres", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_videos_genres_on_genre_id"
+    t.index ["video_id"], name: "index_videos_genres_on_video_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -97,4 +111,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_133738) do
   add_foreign_key "messages", "users"
   add_foreign_key "preferences", "users"
   add_foreign_key "preferences", "videos"
+  add_foreign_key "videos_genres", "genres"
+  add_foreign_key "videos_genres", "videos"
 end
