@@ -1,9 +1,12 @@
 <div class="user-show-container">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-show" %>
-  <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%><h5>
-
+  <% if @user.photo.attached? %>
+  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+  <%= image_tag("fakepic.png") %>
+  <% end %>
+  <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%></h5>
 </div>
-  
+
 </div>
 <div id="user-show-bottom-container">
   <div id="user-show-left-column">
@@ -13,10 +16,13 @@
         <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email %></p>
         <p id="user-show-small-font"><%= image_tag "country-icon", class: "user-show-icon" %>  <%= @user.country%></p>
         <p id="user-show-small-font"><%= image_tag "gender-icon", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
+        <p id="user-show-small-font"><%= image_tag "age-icon", class: "user-show-icon" %> <%= @user.age%></p>
       </div>
       <div >
-      <%= link_to "✎ edit", "#", id: "user-show-edit-button"  %>
-      </div>
+        <% if @user == current_user%>
+          <%= link_to "✎ edit", edit_user_path, id: "user-show-edit-button"  %>
+        <%end%>
+        </div>
     </div>
     <div id="user-show-top-3">
       <h6>My top 3 rated series</h6>
