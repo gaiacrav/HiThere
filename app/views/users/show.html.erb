@@ -1,9 +1,8 @@
 <div class="user-show-container">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-show" %>
-  <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%><h5>
-
+  <%= cl_image_tag @article.photo.key, class: "avatar-user-show" %>
+  <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%></h5>
 </div>
-  
+
 </div>
 <div id="user-show-bottom-container">
   <div id="user-show-left-column">
