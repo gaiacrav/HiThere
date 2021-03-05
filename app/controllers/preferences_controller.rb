@@ -13,12 +13,12 @@ skip_before_action :verify_authenticity_token
 
   def new
     @genres = Genre.all
-    if params["/preferences/new"].present?
-      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(20)
-      @count = @videos.count
-    else
-      @videos = Video.all
+    @videos = Video.all.limit(0)
+    if params[:genre].present?
+      @genre = Genre.find(params[:genre])
+      @videos = @genre.videos.limit(20)
     end
+    @count = @videos.count
     @preference = Preference.new
   end
 
