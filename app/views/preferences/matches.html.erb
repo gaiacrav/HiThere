@@ -19,7 +19,7 @@
             <h2 class="card-user"> <%= user.first_name %> <%= user.last_name %> (<%= user.country %>) </h2>
             <p class="card-user"> <strong> Age: </strong> <%= user.age %> years old </p>
                 <% user.videos_in_common_with(current_user).each do |video|%>
-                <p class="card-user"> ➜ <%= video.title%> </end>
+                <p class="card-user"> ❤️ <%= video.title%> </end>
                 <%end%>
           </div>
           <div id="card-buttons">
