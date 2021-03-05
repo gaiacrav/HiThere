@@ -1,5 +1,9 @@
 <div class="user-edit-container">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-edit" %>
+  <% if @user.photo.attached? %>
+  <%= cl_image_tag @user.photo.key, class: "avatar-user-edit" %>
+  <% else %>
+  <%= image_tag("fakepic.png", class: "avatar-user-edit") %>
+  <% end %>
 
 </div>
 
