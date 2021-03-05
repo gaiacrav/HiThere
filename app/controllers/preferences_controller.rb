@@ -19,8 +19,8 @@ skip_before_action :verify_authenticity_token
   def create
     @user = current_user
     @videos = Video.all
-    params['array'].each do |key, value|
-      Preference.create(video: @videos[key.to_i], user: @user)
+    params['array'].each do |video_id, value|
+      Preference.create(video: Video.find(video_id), user: @user)
     end #redirect to dashboard - Sara
     redirect_to matches_preferences_path
     # @preferences.save!

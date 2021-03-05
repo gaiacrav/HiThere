@@ -16,17 +16,15 @@
 
   <% if @videos.count > 0 %>
   <form action="/preferences" method="post">
-    <% counter=0 %>
     <div class="card-body mt-2">
     <% @videos.each do |video| %>
       <div class="row">
-        <% if current_user.videos.where(id: video.id)!=[] %>
+        <% if current_user.videos.find_by_id(video.id) %>
         <i class="fal fa-heart"></i>
         <% end %>
-        <input type="checkbox" name=array[<%= counter %>] class="m-2">
+        <input type="checkbox" name=array[<%= video.id%>] class="m-2">
         <label for=<%= video.title %> class="card-title"> <span id="name"> <%= video.title %> 🎬 </span> </label>
       </br> <p class="ml-2"> <em> Genre: </em> <%= video.genre %> </p>
-      <% counter+=1 %>
       </div>
     <% end %>
     </div>
