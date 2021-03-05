@@ -30,7 +30,7 @@ skip_before_action :verify_authenticity_token
       Preference.create(video: @videos[key.to_i], user: @user)
     end #redirect to dashboard - Sara
     redirect_to matches_preferences_path
-    @preferences.save!
+    # @preferences.save!
   end
 
   def show
