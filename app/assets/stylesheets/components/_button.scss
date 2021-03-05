@@ -22,3 +22,22 @@
 #sign-up {
   width: 300px;
 }
+
+#btn-chose-movie{
+  color: #E50914;
+  font-size: 16px;
+  background-color: white ;
+  border: 1px solid #424242;
+  padding: 7px 17px;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: opacity 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#btn-chose-movie:hover{
+  color: white;
+  background-color: #E50914;
+  cursor: pointer;
+  text-decoration: none;
+}

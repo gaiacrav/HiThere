@@ -1,5 +1,4 @@
 class PreferencesController < ApplicationController
-
 skip_before_action :verify_authenticity_token
 
   def matches
@@ -15,7 +14,7 @@ skip_before_action :verify_authenticity_token
   def new
     @genres = Genre.all
     if params["/preferences/new"].present?
-      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(50)
+      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(20)
       @count = @videos.count
     else
       @videos = Video.all

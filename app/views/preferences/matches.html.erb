@@ -2,6 +2,9 @@
   <h1 class="header"> Your top matches </h1>
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> you have many matches, start chatting now 💬 </h5>
 
+<div id="button-add-movie">
+<%= link_to "Choose a movie 🎥", new_preference_path, id: "btn-chose-movie" %>
+</div>
 
   <% @users.reject { |u| u == current_user}.each do |user| %>
     <div class="card-product">
