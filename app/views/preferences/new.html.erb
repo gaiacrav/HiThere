@@ -2,17 +2,17 @@
   <h1 class="header"> One last step! </h1>
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> tell us more about your favorite movies🍿 </h5>
 
-  <%= form_tag new_preference_path, method: :get do %>
-  <%= select_tag "genre", options_from_collection_for_select(@genres, "id", "name", params[:genre]), prompt: "Select a genre" %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+    <%= form_tag new_preference_path, class: "form-group", method: :get do %>
+      <%= select_tag "genre", options_from_collection_for_select(@genres, "id", "name", params[:genre]), prompt: "Pick a genre...", class:"form-control" %>
+      <%= submit_tag "Search!", class: "btn btn-ghost ml-0 mt-2" %>
+    <% end %>
 
 
   <% if @genre %>
-  <p> <strong> 🥳 We have found <%= @count %> <span id="name"> movies! </span></strong> </p>
-  <% else %>
-  <p> <strong>❗️Please select a <span id="name"> genre! </span></strong> </p>
-  <% end %>
+    <p> <strong> 🥳 We have found <%= @count %> <span id="name"> movies! </span></strong> </p>
+  <%else%>
+    <p> <strong>Please select a <span id="name"> genre❗️ </span></strong> </p>
+  <%end%>
 
   <% if @videos.count > 0 %>
   <form action="/preferences" method="post">
