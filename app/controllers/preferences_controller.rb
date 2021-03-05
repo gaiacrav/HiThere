@@ -8,7 +8,10 @@ skip_before_action :verify_authenticity_token
 
     # @matches = User.where(country: match_country).or(User.where(genre: match_genre))
     # Eliseu: Not sure about this - still needs validation from a TA
-    @users = User.all
+    user = current_user
+    preferences_video_ids = preferences_video_ids = user.preferences.map(&:video_id)
+
+    @users = User.joins(:preferences).where(preferences: {video_id: preferences_video_ids}).where.not(id: user.id).uniq
   end
 
   def new
@@ -25,7 +28,6 @@ skip_before_action :verify_authenticity_token
   def create
     @user = current_user
     @videos = Video.all
-    current_user.videos.destroy_all
     params['array'].each do |key, value|
       Preference.create(video: @videos[key.to_i], user: @user)
     end #redirect to dashboard - Sara

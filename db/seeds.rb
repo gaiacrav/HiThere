@@ -7,19 +7,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#User.destroy_all
-#Video.destroy_all
+Preference.destroy_all
+VideosGenre.destroy_all
+Genre.destroy_all
+User.destroy_all
+Video.destroy_all
 
 # Users seed
 
-#User.create!(first_name: "Gaia", last_name: "Cravesana", email: "gaia@gmail.com", password: "12345678", gender: "female", age: 26, country: "Italy", admin: true)
-#User.create!(first_name: "Sara", last_name: "Subtil", email: "sara@gmail.com", password: "12345678", gender: "female", age: 35, country: "Portugal", admin: true)
-#User.create!(first_name: "Eliseu", last_name: "Mateus", email: "eliseu@gmail.com", password: "12345678", gender: "male", age: 50, country: "Portugal", admin: true)
-#User.create!(first_name: "Lola", last_name: "Net", email: "lola@gmail.com", password: "12345678", gender: "female", age: 37, country: "Spain", admin: false)
+User.create!(first_name: "Gaia", last_name: "Cravesana", email: "gaia@gmail.com", password: "12345678", gender: "female", age: 26, country: "Italy", admin: true)
+User.create!(first_name: "Sara", last_name: "Subtil", email: "sara@gmail.com", password: "12345678", gender: "female", age: 35, country: "Portugal", admin: true)
+eliseu = User.create!(first_name: "Eliseu", last_name: "Mateus", email: "eliseu@gmail.com", password: "12345678", gender: "male", age: 50, country: "Portugal", admin: true)
+User.create!(first_name: "Lola", last_name: "Net", email: "lola@gmail.com", password: "12345678", gender: "female", age: 37, country: "Spain", admin: false)
 
-#20.times do
-  #movie = Video.create(title: Faker::Movie.title, genre: 'horror', kind: 'movie')
-#end
 
 # parse CSV
 require 'csv'
@@ -37,5 +37,17 @@ CSV.foreach(filepath, csv_options) do |row|
     VideosGenre.create!(video_id: video.id, genre_id: genre.id)
   end
 end
+
+5.times do 
+  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456", gender: ["male", "female"].sample, age: 26, country: Faker::Address.country, admin: false)
+  4.times do
+    video = Video.all.sample
+    preference = Preference.create!(user: user, video: video) 
+  end
+  video = Video.all.sample
+  preference = Preference.create!(user: user, video: video)
+  preference = Preference.create!(user: eliseu, video: video) 
+end
+
 
 
