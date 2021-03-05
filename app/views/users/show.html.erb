@@ -13,10 +13,10 @@
     <div id="user-show-about-me">
       <div>
         <h6> <strong> About me </strong> </h6>
-        <p id="user-show-small-font"><%= image_tag "email-icon", class: "user-show-icon" %> <%= @user.email%></p>
-        <p id="user-show-small-font"><%= image_tag "country-icon", class: "user-show-icon" %>  <%= @user.country%></p>
-        <p id="user-show-small-font"><%= image_tag "gender-icon", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
-        <p id="user-show-small-font"><%= image_tag "age-icon", class: "user-show-icon" %> <%= @user.age%></p>
+        <p id="user-show-small-font"><%= image_tag "email-icon.png", class: "user-show-icon" %> <%= @user.email%></p>
+        <p id="user-show-small-font"><%= image_tag "country-icon.png", class: "user-show-icon" %>  <%= @user.country%></p>
+        <p id="user-show-small-font"><%= image_tag "gender-icon.png", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
+        <p id="user-show-small-font"><%= image_tag "age-icon.png", class: "user-show-icon" %> <%= @user.age%></p>
       </div>
       <div >
         <% if @user == current_user%>
