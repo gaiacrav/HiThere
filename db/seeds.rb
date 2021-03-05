@@ -38,16 +38,16 @@ CSV.foreach(filepath, csv_options) do |row|
   end
 end
 
-5.times do 
-  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456", gender: ["male", "female"].sample, age: 26, country: Faker::Address.country, admin: false)
-  4.times do
-    video = Video.all.sample
-    preference = Preference.create!(user: user, video: video) 
-  end
-  video = Video.all.sample
-  preference = Preference.create!(user: user, video: video)
-  preference = Preference.create!(user: eliseu, video: video) 
-end
+# 5.times do 
+#   user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456", gender: ["male", "female"].sample, age: 26, country: Faker::Address.country, admin: false)
+#   4.times do
+#     video = Video.all.sample
+#     preference = Preference.create!(user: user, video: video) 
+#   end
+#   video = Video.all.sample
+#   preference = Preference.create!(user: user, video: video)
+#   preference = Preference.create!(user: eliseu, video: video) 
+# end
 
 
 
