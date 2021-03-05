@@ -2,16 +2,7 @@ class PreferencesController < ApplicationController
 skip_before_action :verify_authenticity_token
 
   def matches
-    # Eliseu: just an idea for a first criteria definition:
-    # match_country = current_user.country
-    # match_genre = current_user.medium.genre  # Eliseu: not sure about syntax
-
-    # @matches = User.where(country: match_country).or(User.where(genre: match_genre))
-    # Eliseu: Not sure about this - still needs validation from a TA
-    user = current_user
-    preferences_video_ids = preferences_video_ids = user.preferences.map(&:video_id)
-
-    @users = User.joins(:preferences).where(preferences: {video_id: preferences_video_ids}).where.not(id: user.id).uniq
+    @users = current_user.matches.limit(30)
   end
 
   def new
