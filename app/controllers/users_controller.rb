@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
-      @users = User.all.limit(7) # Eliseu: This must be changed to filter only friends
-      # @preference = Preference.new(user_id: @user)
+      @users = @user.matches.limit(7)
+      @favorite_videos = @user.videos
     end
 
     def edit

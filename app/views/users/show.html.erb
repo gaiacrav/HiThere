@@ -25,10 +25,10 @@
         </div>
     </div>
     <div id="user-show-top-3">
-      <h6> <strong> My top 3 rated series </strong> </h6>
-      <p id="user-show-small-font">Email: <%= @user.email %></p>
-      <p id="user-show-small-font">Country: <%= @user.country%></p>
-      <p id="user-show-small-font">Gender: <%= @user.gender%></p>
+      <h6> <strong> My favorite movies </strong> </h6>
+        <p id="user-show-small-font"> <% @favorite_videos.each do |video|%> </p>
+        <p id="user-show-small-font"> ➜ <%= video.title%> </p>
+        <%end %>
       <div style="flex-grow:1"></div>
       <p id="user-show-minimal-font">view more...</p>
     </div>
