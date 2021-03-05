@@ -1,6 +1,6 @@
 <!-- Just placeholder code, for now -->
 
-<%@users.each do |user|%>
+<% @users.reject { |u| u == current_user}.each do |user| %>
   <% if user.photo.attached? %>
   <p> <%= cl_image_tag(user.photo.key, class: "avatar-user-show-friend")%> <%= user.first_name %> <%= user.last_name %></p>
   <% else %>

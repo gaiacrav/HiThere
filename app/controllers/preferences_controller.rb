@@ -1,5 +1,4 @@
 class PreferencesController < ApplicationController
-
 skip_before_action :verify_authenticity_token
 
   def matches
@@ -14,11 +13,12 @@ skip_before_action :verify_authenticity_token
 
   def new
     @genres = Genre.all
-    if params["/preferences/new"].present?
-      @videos = Genre.find([params["/preferences/new"]["genre"].to_i]).first.videos.limit(2)
-    else
-      @videos = Video.all
+    @videos = Video.all.limit(0)
+    if params[:genre].present?
+      @genre = Genre.find(params[:genre])
+      @videos = @genre.videos.limit(20)
     end
+    @count = @videos.count
     @preference = Preference.new
   end
 
@@ -30,6 +30,7 @@ skip_before_action :verify_authenticity_token
       Preference.create(video: @videos[key.to_i], user: @user)
     end #redirect to dashboard - Sara
     redirect_to matches_preferences_path
+    # @preferences.save!
   end
 
   def show

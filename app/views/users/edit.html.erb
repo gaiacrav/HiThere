@@ -1,11 +1,16 @@
 <div class="user-edit-container">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-user-edit" %>
+  <% if @user.photo.attached? %>
+  <%= cl_image_tag @user.photo.key, class: "avatar-user-edit" %>
+  <% else %>
+  <%= image_tag("fakepic.png", class: "avatar-user-edit") %>
+  <% end %>
 
 </div>
-  
-<div id="user-edit-main-container" >  
-  <div>  
+
+<div id="user-edit-main-container" >
+  <div>
     <%= simple_form_for @user do |f| %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
       <%= f.input :email %>
@@ -17,7 +22,7 @@
       </div>
     <% end %>
   </div>
-</div> 
+</div>
 
 <div id="user-edit-bottom-container">
     <%= link_to "Back", user_path, class: "btn user-edit-back-button mt-2 ms-0" %>
