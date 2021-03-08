@@ -20,7 +20,7 @@
       </div>
       <div >
         <% if @user == current_user%>
-          <%= link_to "✎ edit", edit_user_path, id: "user-show-edit-button"  %>
+          <i class="fas fa-user-edit"> <%= link_to "edit", edit_user_path, id: "user-show-edit-button"  %> </i>
         <%end%>
         </div>
     </div>

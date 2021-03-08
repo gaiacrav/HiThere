@@ -138,7 +138,14 @@
 #user-show-edit-button {
   font-size: 12px;
   text-align: right;
+  color: white;
+}
+
+#user-show-edit-button:hover {
+  font-size: 12px;
+  text-align: right;
   color: #EF0914;
+  text-decoration: none;
 }
 
 #button-profile-link{
