@@ -3,6 +3,7 @@ skip_before_action :verify_authenticity_token
 
   def matches
     @users = current_user.matches.limit(30)
+    @chatroom = Chatroom.new
   end
 
   def new
