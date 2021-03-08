@@ -28,7 +28,7 @@
       <h6> <strong> My favorite movies </strong> </h6>
       <div id="scrollbar">
         <p id="user-show-small-font"> <% @favorite_videos.each do |video|%> </p>
-        <p id="user-show-small-font"> ❤️ <span class="m-2"> <%= video.title%> </span> </p>
+        <p id="user-show-small-font"> <i class="fas fa-heart ml-2" style="color:#EF0914; font-size: 20px;"> </i> <span class="m-2"> <%= video.title%> </span> </p>
         <%end %>
       </div>
       <div style="flex-grow:1"></div>

@@ -7,7 +7,7 @@
       <%= submit_tag "Search!", class: "btn btn-ghost ml-0 mt-2" %>
     <% end %>
 
-
+  <div id="movie-choice">
   <% if @genre %>
     <p> <strong> 🥳 We have found <%= @count %> <span id="name"> movies! </span></strong> </p>
   <%else%>
@@ -20,7 +20,7 @@
     <% @videos.each do |video| %>
       <div class="row">
         <% if current_user.videos.find_by_id(video.id) %>
-        <i class="fas fa-heart p-2" style="color:#ffffff"></i>
+        <i class="fas fa-heart p-2" style="color:#EF0914"></i>
         <% end %>
         <input type="checkbox" name=array[<%= video.id%>] class="m-2">
         <label for=<%= video.title %> class="card-title"> <span id="name"> <%= video.title %> 🎬 </span> </label>
@@ -31,6 +31,7 @@
     <input type="submit" value="Submit" class="btn btn-ghost ml-0 mt-1">
   </form>
   <% end %>
+<div>
 </div>
 
 
