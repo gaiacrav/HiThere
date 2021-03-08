@@ -37,7 +37,8 @@
   }
 
 #user-show-left-column {
-  width: 48%;
+  width: 425px;                       // it was 48%
+  height: 600px;                      // added by Gaia
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,7 +46,7 @@
 
 #user-show-about-me {
   padding: 12px;
-  height: 52%;
+  height: 250px;                         // used to be 52%
   background-color: rgb(27, 27, 27);
   color: white;
   display: flex;
@@ -54,7 +55,7 @@
 
 #user-show-top-3 {
   padding: 12px;
-  height: 40%;
+  height: 300px;                          // used to be 42%
   background-color: rgb(27, 27, 27);
   color: white;
 
@@ -62,7 +63,8 @@
 
 #user-show-right-column {
   padding: 12px;
-  width: 48%;
+  width: 425px;                         // it was 48%
+  height: 600px;                        // added by Gaia
   background-color: rgb(27, 27, 27);
   color: white;
 }
@@ -83,7 +85,7 @@
 
 .user-show-icon {
   width: 30px;
-  border-radius: 50%;  
+  border-radius: 50%;
 }
 
 #user-show-edit-button {
