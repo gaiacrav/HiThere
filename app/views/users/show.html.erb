@@ -13,14 +13,14 @@
     <div id="user-show-about-me">
       <div>
         <h6> <strong> About me </strong> </h6>
-        <p id="user-show-small-font"> <i class="far fa-envelope ml-2"></i><%# image_tag "email-icon.png", class: "user-show-icon" %> <span class="m-2"> <em> <%= @user.email%> </em> <span> </p>
-        <p id="user-show-small-font"><i class="fas fa-map-marked-alt ml-2"></i><%# image_tag "country-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.country%> </span> </p>
-        <p id="user-show-small-font"><i class="fas fa-venus-mars ml-2"></i><%# image_tag "gender-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.gender.capitalize%> </span> </p>
-        <p id="user-show-small-font"><i class="fas fa-birthday-cake ml-2"></i><%# image_tag "age-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.age%> </span> </p>
+        <p id="user-show-small-font"> <i class="far fa-envelope ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "email-icon.png", class: "user-show-icon" %> <span class="m-2"> <em> <%= @user.email%> </em> <span> </p>
+        <p id="user-show-small-font"><i class="fas fa-map-marked-alt ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "country-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.country%> </span> </p>
+        <p id="user-show-small-font"><i class="fas fa-venus-mars ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "gender-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.gender.capitalize%> </span> </p>
+        <p id="user-show-small-font"><i class="fas fa-birthday-cake ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "age-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.age%> </span> </p>
       </div>
       <div >
         <% if @user == current_user%>
-          <i class="fas fa-user-edit"> <%= link_to "edit", edit_user_path, id: "user-show-edit-button"  %> </i>
+          <i class="fas fa-user-edit"> </i> <%= link_to "edit", edit_user_path, id: "user-show-edit-button"  %>
         <%end%>
         </div>
     </div>
