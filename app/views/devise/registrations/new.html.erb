@@ -5,7 +5,6 @@
   <%= f.error_notification %>
 
   <div class="form-inputs p-2">
-    <%= f.input :photo, as: :file %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -25,19 +24,29 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Last name" }%>
-    <%= f.input :age,
+
+    <%# "Date of birth *" %>
+     <%# f.date_select :birth_date, order: [:month, :day, :year],
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Age" }%> </p>
+    <%= f.input :birth_date,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Age" }%>
-    <%= f.input :country,
+
+    <p class="mt-2"> <%= f.input :country,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "country" }%>
-    <%# f.select :gender, options_for_select(%w[Female, Male]) %>
-    <%= f.input :gender,
+                input_html: { autocomplete: "country" } %> </p>
+
+    <%= "Gender" %> </br>
+    <p class="mt-1"> <%= f.select :gender, options_for_select(%w[Female Male])%> </p>
+    <%# f.input :gender,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "gender" }%>
+    <p class="mt-2"> <%= f.input :photo, as: :file %> </p>
   </div>
 
   <div class="form-actions">
