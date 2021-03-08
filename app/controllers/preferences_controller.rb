@@ -10,7 +10,7 @@ skip_before_action :verify_authenticity_token
     @videos = Video.all.limit(0)
     if params[:genre].present?
       @genre = Genre.find(params[:genre])
-      @videos = @genre.videos.limit(20)
+      @videos = @genre.videos.sort.first(20)
     end
     @count = @videos.count
     @preference = Preference.new
