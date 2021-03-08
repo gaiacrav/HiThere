@@ -60,12 +60,12 @@
   color: white;
 }
 
+//scroll bar for top movies
 #scrollbar {
   overflow-y: scroll;
   height: 200px;
 }
 
-//scroll bar for top movies
 #scrollbar::-webkit-scrollbar {
   width: 10px;
   background-color: #424242;
