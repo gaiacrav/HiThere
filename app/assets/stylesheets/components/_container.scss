@@ -21,3 +21,35 @@
   border-radius: 2px;
   padding: 50px;
 }
+
+// how to get started landing page
+#home-instructions{
+  width: 900px;
+  margin: auto;
+  margin-top: 0px;
+}
+
+#steps{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#line {
+  background-color: #212121;
+  height: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+// choose movie preferences new
+
+#movie-choice {
+  width: 900px;
+  height: 100%;
+  background-color:  rgb(27, 27, 27);
+  padding: 10px;
+  border-radius: 3px;
+}

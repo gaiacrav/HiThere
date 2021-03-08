@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :videos, through: :preferences
   has_many :created_chatrooms, class_name: "Chatroom", foreign_key: 'creator_id'
   has_one_attached :photo
-  validates :first_name, :age, presence: true
+  validates :first_name, :birth_date, presence: true
 
   def matches
     User.joins(:preferences).where(preferences: {video_id: preferences_video_ids}).where.not(id: self.id).distinct
