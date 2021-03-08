@@ -4,7 +4,7 @@
   <% else %>
   <%= image_tag("fakepic.png", class: "avatar-user-show") %>
   <% end %>
-  <h5 class="header-sub"><%= @user.first_name%> <%=@user.last_name%></h5>
+  <h5 class="header-sub-profile"><%= @user.first_name%> <%=@user.last_name%></h5>
 </div>
 
 </div>
@@ -13,31 +13,31 @@
     <div id="user-show-about-me">
       <div>
         <h6> <strong> About me </strong> </h6>
-        <p id="user-show-small-font"><%= image_tag "email-icon.png", class: "user-show-icon" %> <%= @user.email%></p>
-        <p id="user-show-small-font"><%= image_tag "country-icon.png", class: "user-show-icon" %>  <%= @user.country%></p>
-        <p id="user-show-small-font"><%= image_tag "gender-icon.png", class: "user-show-icon" %> <%= @user.gender.capitalize%></p>
-        <p id="user-show-small-font"><%= image_tag "age-icon.png", class: "user-show-icon" %> <%= @user.age%></p>
+        <p id="user-show-small-font"><%= image_tag "email-icon.png", class: "user-show-icon" %> <span class="m-2"> <em> <%= @user.email%> </em> <span> </p>
+        <p id="user-show-small-font"><%= image_tag "country-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.country%> </span> </p>
+        <p id="user-show-small-font"><%= image_tag "gender-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.gender.capitalize%> </span> </p>
+        <p id="user-show-small-font"><%= image_tag "age-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.age%> </span> </p>
       </div>
       <div >
         <% if @user == current_user%>
-          <%= link_to "✎ edit", edit_user_path, id: "user-show-edit-button"  %>
+          <i class="fas fa-user-edit"> <%= link_to "edit", edit_user_path, id: "user-show-edit-button"  %> </i>
         <%end%>
         </div>
     </div>
     <div id="user-show-top-3">
       <h6> <strong> My favorite movies </strong> </h6>
+      <div id="scrollbar">
         <p id="user-show-small-font"> <% @favorite_videos.each do |video|%> </p>
-        <p id="user-show-small-font"> ❤️ <%= video.title%> </p>
+        <p id="user-show-small-font"> ❤️ <span class="m-2"> <%= video.title%> </span> </p>
         <%end %>
+      </div>
       <div style="flex-grow:1"></div>
-      <p id="user-show-minimal-font">view more...</p>
     </div>
   </div>
 
   <div id="user-show-right-column">
     <h6 style="margin-bottom: 20px"> <strong> Friends </strong> </h6>
-    <%=render "components/show-friends"%>
-    <p id="user-show-minimal-font">view more...</p>
+      <%=render "components/show-friends"%>
   </div>
 </div>
 <div class="user-show-middle-container">

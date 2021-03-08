@@ -18,17 +18,19 @@
          <div>
             <h2 class="card-user"> <%= user.first_name %> <%= user.last_name %> (<%= user.country %>) </h2>
             <p class="card-user"> <strong> Age: </strong> <%= user.age %> years old </p>
+                <div id="scrollbar-videos">
                 <% user.videos_in_common_with(current_user).each do |video|%>
-                <p class="card-user"> ❤️ <%= video.title%> </p>
+                <p class="card-user mr-3"> ❤️ <%= video.title%> </p>
                 <%end%>
+              </div>
           </div>
           <div id="card-buttons">
             <%= link_to "Profile", user_path(user), class: "btn btn-ghost m-2 "%>
             <%= simple_form_for Chatroom.new do |f|%>
               <%=f.input :user_id, input_html: {value: user.id}, as: :hidden %>
-              <%=f.submit "Chat", class: "btn btn-ghost m-2 "%>
+              <%=f.submit "Chat", class: "btn btn-ghost m-3"%>
             <% end %>
-            
+
           </div>
         </div>
     </div>

@@ -37,7 +37,8 @@
   }
 
 #user-show-left-column {
-  width: 48%;
+  width: 425px;                       // it was 48%
+  height: 500px;                      // added by Gaia
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,7 +46,7 @@
 
 #user-show-about-me {
   padding: 12px;
-  height: 52%;
+  height: 220px;                         // used to be 52%
   background-color: rgb(27, 27, 27);
   color: white;
   display: flex;
@@ -54,15 +55,63 @@
 
 #user-show-top-3 {
   padding: 12px;
-  height: 40%;
+  height: 250px;                          // used to be 42%
   background-color: rgb(27, 27, 27);
   color: white;
-
 }
+
+//scroll bar for top movies
+#scrollbar {
+  overflow-y: scroll;
+  height: 200px;
+}
+
+#scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background-color: #424242;
+  border-radius: 30px;
+}
+
+#scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #424242;
+  border-radius: 10px;
+}
+
+#scrollbar::-webkit-scrollbar-thumb {
+  background-color: #EF0914;
+  border-radius: 10px;
+}
+
+//scroll bar for friends
+
+#scrollbar-friends {
+  overflow-y: scroll;
+  height: 425px;
+}
+
+#scrollbar-friends::-webkit-scrollbar {
+  width: 10px;
+  background-color: #424242;
+  border-radius: 30px;
+}
+
+#scrollbar-friends::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #424242;
+  border-radius: 10px;
+}
+
+#scrollbar-friends::-webkit-scrollbar-thumb {
+  background-color: #EF0914;
+  border-radius: 10px;
+}
+
 
 #user-show-right-column {
   padding: 12px;
-  width: 48%;
+  width: 425px;                         // it was 48%
+  height: 500px;                        // added by Gaia
   background-color: rgb(27, 27, 27);
   color: white;
 }
@@ -83,12 +132,23 @@
 
 .user-show-icon {
   width: 30px;
-  border-radius: 50%;  
+  border-radius: 50%;
 }
 
 #user-show-edit-button {
   font-size: 12px;
   text-align: right;
-  color: #EF0914;
+  color: white;
 }
 
+#user-show-edit-button:hover {
+  font-size: 12px;
+  text-align: right;
+  color: #EF0914;
+  text-decoration: none;
+}
+
+#button-profile-link{
+  display: flex;
+  justify-content: space-between;
+}

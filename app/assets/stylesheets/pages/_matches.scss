@@ -1,0 +1,23 @@
+//scroll bar for top movies
+#scrollbar-videos {
+  overflow-y: scroll;
+  height: 30px;
+}
+
+#scrollbar-videos::-webkit-scrollbar {
+  width: 10px;
+  background-color: #424242;
+  border-radius: 30px;
+}
+
+#scrollbar-videos::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+#scrollbar-videos::-webkit-scrollbar-thumb {
+  background-color: #EF0914;
+  border-radius: 20px;
+}
