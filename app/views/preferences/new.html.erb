@@ -20,7 +20,7 @@
     <% @videos.each do |video| %>
       <div class="row">
         <% if current_user.videos.find_by_id(video.id) %>
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart p-2" style="color:#F06292", input type="hidden"></i>
         <% end %>
         <input type="checkbox" name=array[<%= video.id%>] class="m-2">
         <label for=<%= video.title %> class="card-title"> <span id="name"> <%= video.title %> 🎬 </span> </label>
