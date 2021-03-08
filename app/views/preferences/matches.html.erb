@@ -28,7 +28,7 @@
             <%= link_to "Profile", user_path(user), class: "btn btn-ghost m-2 "%>
             <%= simple_form_for Chatroom.new do |f|%>
               <%=f.input :user_id, input_html: {value: user.id}, as: :hidden %>
-              <%=f.submit "Chat", class: "btn btn-ghost m-2 "%>
+              <%=f.submit "Chat", class: "btn btn-ghost m-3"%>
             <% end %>
 
           </div>
