@@ -83,6 +83,30 @@
   border-radius: 10px;
 }
 
+//scroll bar for friends
+
+#scrollbar-friends {
+  overflow-y: scroll;
+  height: 425px;
+}
+
+#scrollbar-friends::-webkit-scrollbar {
+  width: 10px;
+  background-color: #424242;
+  border-radius: 30px;
+}
+
+#scrollbar-friends::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #424242;
+  border-radius: 10px;
+}
+
+#scrollbar-friends::-webkit-scrollbar-thumb {
+  background-color: #EF0914;
+  border-radius: 10px;
+}
+
 
 #user-show-right-column {
   padding: 12px;
