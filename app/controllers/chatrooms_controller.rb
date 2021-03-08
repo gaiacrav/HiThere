@@ -22,3 +22,5 @@ class ChatroomsController < ApplicationController
     end
 
 end
+
+

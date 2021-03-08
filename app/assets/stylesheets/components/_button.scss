@@ -12,15 +12,19 @@
   justify-content: center;
   margin: auto;
   width: 100px;
+  text-align: center;
 }
 
 .btn-ghost:hover {
   opacity: 1;
+  color: #E50914;
+  background-color: white;
 }
 
 // Sign up page in the homepage
 #sign-up {
   width: 300px;
+  text-align: center;
 }
 
 #btn-chose-movie{
@@ -33,6 +37,7 @@
   border-radius: 3px;
   transition: opacity 0.3s ease;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #btn-chose-movie:hover{
@@ -42,4 +47,24 @@
   text-decoration: none;
 }
 
+.btn-visit-profile{
+  color: #E50914;
+  font-size: 16px;
+  background-color: white ;
+  border: 1px solid #424242;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 3px;
+  width: 70px;
+  height: 35px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.btn-visit-profile:hover{
+  color: white;
+  background-color: #E50914;
+  cursor: pointer;
+  text-decoration: none;
+}
 
