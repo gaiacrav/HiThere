@@ -4,9 +4,9 @@
 <% @users.reject { |u| u == current_user}.each do |user| %>
   <div id="button-profile-link">
     <% if user.photo.attached? %>
-      <p> <%= cl_image_tag(user.photo.key, class: "avatar-user-show-friend")%> <%= user.first_name %> <%= user.last_name %></p>
+      <p> <%= cl_image_tag(user.photo.key, class: "avatar-user-show-friend")%> <span class="m-2"> <%= user.first_name %> <%= user.last_name %></span></p>
     <% else %>
-      <p><%= image_tag("fakepic.png", class: "avatar-user-show-friend") %> <%= user.first_name %> <%= user.last_name %></p>
+      <p><%= image_tag("fakepic.png", class: "avatar-user-show-friend") %> <span class="m-2"> <%= user.first_name %> <%= user.last_name %> </span> </p>
     <% end %>
   <%= link_to "Profile", user_path(user.id), class: "btn-visit-profile"%>
   </div>
