@@ -1,10 +1,22 @@
 <div class="home-container">
-  <h1 class="header"> Meet movies enthusiasts <h1>
-  <h5 class="header-sub"> Get to know new people and chat with them about your favorite movies! <h5>
+  <h1 class="header"> Meet your new movie buddies <h1>
+  <h5 class="header-sub"> Have meaningful chats about the movies you love! <h5>
   <% if !user_signed_in?  %>
   <%= render "components/buttonSignup"%>
   <% else %>
   <%= link_to "Choose your preference", new_preference_path, class: "btn btn-danger" %>
   <% end %>
   <%= render "components/card"%>
+
+<div id="line"> </div>
+  <div id="home-instructions">
+    <h5 id="subheader-instructions"> How to get started? </h5>
+    <div id="steps">
+      <h6> <span id="step"> Step 1️⃣ </span> </br> Create your profile </h6>
+      <h6> <span id="step"> Step 2️⃣ </span></br> Select your favorite movies </h6>
+      <h6> <span id="step"> Step 3️⃣ </span></br> Check your top matches </h6>
+      <h6> <span id="step"> Step 4️⃣ </span></br> Start chatting! </h6>
+    </div>
+  <div>
+
 </div>
