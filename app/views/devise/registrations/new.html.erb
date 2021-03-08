@@ -24,17 +24,13 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Last name" }%>
-
-    <%# "Date of birth *" %>
-     <%# f.date_select :birth_date, order: [:month, :day, :year],
+     <%= f.input :birth_date,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "Age" }%>
-    <%= f.input :birth_date,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Age" }%>
-
+                      order: %i(day month year),
+                      start_year: Time.now.year - 100,
+                      end_year: Time.now.year,
+                      input_html: { autocomplete: "birth_date" } %>
     <%= f.input :country,
                 required: true,
                 autofocus: true,
