@@ -40,13 +40,13 @@
                 autofocus: true,
                 input_html: { autocomplete: "country" } %>
 
-    <%= "Gender" %> </br>
-    <p class="mt-1"> <%= f.select :gender, options_for_select(%w[Female Male])%> </p>
-    <%# f.input :gender,
+    <%# "Gender" %>
+    <%# f.select :gender, options_for_select(%w[Female Male])%>
+    <%= f.input :gender,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "gender" }%>
-    <p class="mt-2"> <%= f.input :photo, as: :file %> </p>
+    <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">
