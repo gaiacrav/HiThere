@@ -29,16 +29,16 @@
      <%# f.date_select :birth_date, order: [:month, :day, :year],
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "Age" }%> </p>
+                      input_html: { autocomplete: "Age" }%>
     <%= f.input :birth_date,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Age" }%>
 
-    <p class="mt-2"> <%= f.input :country,
+    <%= f.input :country,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "country" } %> </p>
+                input_html: { autocomplete: "country" } %>
 
     <%= "Gender" %> </br>
     <p class="mt-1"> <%= f.select :gender, options_for_select(%w[Female Male])%> </p>
