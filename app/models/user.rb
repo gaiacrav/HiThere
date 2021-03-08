@@ -22,4 +22,8 @@ class User < ApplicationRecord
     self.videos.joins(:preferences).where(preferences: {video_id: user.preferences_video_ids}).distinct
   end
 
+  def age(birth_date)
+    return (Date.today - Date.new(year, month, day)).to_i
+  end
+
 end
