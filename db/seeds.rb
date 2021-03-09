@@ -17,10 +17,10 @@ Video.destroy_all
 
 # Users seed
 
-User.create!(first_name: "Gaia", last_name: "Cravesana", email: "gaia@gmail.com", password: "12345678", gender: "female", age: 26, country: "Italy", admin: true, birth_date: Date.today)
-User.create!(first_name: "Sara", last_name: "Subtil", email: "sara@gmail.com", password: "12345678", gender: "female", age: 35, country: "Portugal", admin: true, birth_date: Date.today)
-eliseu = User.create!(first_name: "Eliseu", last_name: "Mateus", email: "eliseu@gmail.com", password: "12345678", gender: "male", age: 50, country: "Portugal", admin: true, birth_date: Date.today)
-User.create!(first_name: "Lola", last_name: "Net", email: "lola@gmail.com", password: "12345678", gender: "female", age: 37, country: "Spain", admin: false, birth_date: Date.today)
+User.create!(first_name: "Gaia", last_name: "Cravesana", email: "gaia@gmail.com", password: "12345678", gender: "female", age: 26, country: "Italy", admin: true, birth_date: "1994-12-19")
+User.create!(first_name: "Sara", last_name: "Subtil", email: "sara@gmail.com", password: "12345678", gender: "female", age: 35, country: "Portugal", admin: true, birth_date: "1986-06-04")
+eliseu = User.create!(first_name: "Eliseu", last_name: "Mateus", email: "eliseu@gmail.com", password: "12345678", gender: "male", age: 50, country: "Portugal", admin: true, birth_date: "1971-02-10")
+User.create!(first_name: "Lola", last_name: "Net", email: "lola@gmail.com", password: "12345678", gender: "female", age: 37, country: "Spain", admin: false, birth_date: "1992-12-09")
 
 
 # parse CSV
