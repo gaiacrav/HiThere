@@ -10,13 +10,16 @@
 <div id="user-edit-main-container" >
   <div>
     <%= simple_form_for @user do |f| %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :email %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
-      <%= f.input :email %>
+      <%= f.input :birth_date,
+                  order: %i(day month year),
+                  start_year: Time.now.year - 100,
+                  end_year: Time.now.year %>
       <%= f.input :country %>
       <%= f.input :gender %>
-      <%= f.input :age %>
+      <%= f.input :photo, as: :file %>
       <div style="text-align: right">
         <%= f.button :submit, class: "btn user-edit-update-button" %>
       </div>
