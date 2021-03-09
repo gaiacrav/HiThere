@@ -1,20 +1,25 @@
 <div class="chat-container">
 
-<div class="chat-main-header">
-<h1 class="header-chat"> <%= @chatroom.user.first_name%> </h1>
-<% if @chatroom.user.photo.attached? %>
-  <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
-<% else %>
-  <%= image_tag("fakepic.png")%>
-<% end %>
-</div>
-<div id="chat" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message%>
-  <% end %>
-</div>
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Messages between #{@chatroom.name}" %>
-<% end %>
+  <div class="chat-main-header">
+    <h1 class="header-chat"> <%= @chatroom.user.first_name%> </h1>
+    <% if @chatroom.user.photo.attached? %>
+      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag("fakepic.png")%>
+    <% end %>
+  </div>
 
+  <div id="chat" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message%>
+    <% end %>
+  </div>
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Messages between #{@chatroom.name}" %>
+  <% end %>
+
+  <div id="container-btn-chat">
+    <%= link_to "Back", root_path, class: "btn-chat" %>
+  </div>
 <div>
+
