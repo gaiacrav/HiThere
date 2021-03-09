@@ -38,7 +38,7 @@
 
     <%# "Gender" %>
     <%# f.select :gender, options_for_select(%w[Female Male])%>
-    <%= f.input :gender,
+    <%= f.input :gender, collection: ["Female", "Male", "Preferred not to answer"], prompt: "Select a gender",
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "gender" }%>
