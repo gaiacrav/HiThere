@@ -25,7 +25,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "Last name" }%>
      <%= f.input :birth_date,
-                      required: true,
+                      required: false,
                       autofocus: true,
                       order: %i(day month year),
                       start_year: Time.now.year - 100,

@@ -1,14 +1,16 @@
+require 'time'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :preferences
-  has_many :videos, through: :preferences
-  has_many :created_chatrooms, class_name: "Chatroom", foreign_key: 'creator_id'
+  has_many :preferences, dependent: :destroy
+  has_many :videos, through: :preferences, dependent: :destroy
+  has_many :created_chatrooms, class_name: "Chatroom", foreign_key: 'creator_id', dependent: :destroy
   has_one_attached :photo
-  validates :first_name, :birth_date, presence: true
+  validates :first_name, presence: true
 
   def matches
     User.joins(:preferences).where(preferences: {video_id: preferences_video_ids}).where.not(id: self.id).distinct
@@ -22,8 +24,8 @@ class User < ApplicationRecord
     self.videos.joins(:preferences).where(preferences: {video_id: user.preferences_video_ids}).distinct
   end
 
-  def age(birth_date)
-    return (Date.today - Date.new(year, month, day)).to_i
+  def years(birth_date)
+    @age = (Time.now.year - birth_date.year).to_i
   end
 
 end
