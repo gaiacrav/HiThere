@@ -8,8 +8,7 @@
       <%= image_tag("fakepic.png")%>
     <% end %>
   </div>
-  <div id="line">
-  </div>
+  <div id="line"></div>
 
   <div id="chat" data-chatroom-id="<%= @chatroom.id %>">
     <div id="chat-scrollbar">
@@ -20,6 +19,7 @@
   </div>
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Messages between #{@chatroom.name}" %>
+
   <% end %>
 
   <div id="container-btn-chat">

@@ -68,3 +68,23 @@
   text-decoration: none;
 }
 
+#btn-go-chat{
+  color: #E50914;
+  font-size: 14px;
+  background-color: white ;
+  border: 1px solid #424242;
+  padding: 2px 6px;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: opacity 0.3s ease;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#btn-go-chat:hover{
+  color: white;
+  background-color: #E50914;
+  cursor: pointer;
+  text-decoration: none;
+}
+
