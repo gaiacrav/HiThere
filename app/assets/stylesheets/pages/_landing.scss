@@ -1,0 +1,75 @@
+.home-container {
+  width: 900px;
+  margin: auto;
+}
+
+// homepage header
+.header {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+// homepage subheader
+.header-sub {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+// homepage instructions subheader
+
+#subheader-instructions {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+#step{
+  font-size: 24px;
+  color: #e50914;
+  font-family: 'RocknRoll One', 'sans-serif';
+  padding-bottom: 10px;
+}
+
+#steps{
+  padding: 10px;
+}
+
+// HiThere name on navbar
+#company-name {
+  color: white;
+  font-family: 'RocknRoll One', 'sans-serif';
+}
+
+#company-name-red {
+  color: #e50914;
+}
+
+// how to get started landing page
+#home-instructions{
+  width: 900px;
+  margin: auto;
+  margin-top: 0px;
+}
+
+#steps{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#line-home {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #424242;
+  height: 2px;
+}
+
