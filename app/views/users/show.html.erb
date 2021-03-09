@@ -18,7 +18,9 @@
       <% if @user.gender%>
         <p id="user-show-small-font"><i class="fas fa-venus-mars ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "gender-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.gender.capitalize%> </span> </p>
       <%end%>
+      <% if @user.birth_date%>
         <p id="user-show-small-font"><i class="fas fa-birthday-cake ml-2" style="color: #EF0914; font-size: 20px;"></i><%# image_tag "age-icon.png", class: "user-show-icon" %> <span class="m-2"> <%= @user.years(@user.birth_date)%> </span> </p>
+      <%end%>
       </div>
       <div >
         <% if @user == current_user%>
