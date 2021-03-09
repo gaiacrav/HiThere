@@ -3,7 +3,7 @@
   <h5 id="dashboard-sub"> <span id="name"> <strong> <%= current_user.first_name %> </strong> </span> tell us more about your favorite movies🍿 </h5>
 
     <%= form_tag new_preference_path, class: "form-group", method: :get do %>
-      <%= select_tag "genre", options_from_collection_for_select(@genres, "id", "name", params[:genre]), prompt: "Pick a genre...", class:"form-control" %>
+      <%= select_tag "genre", options_from_collection_for_select(@genres, "name", "name", params[:genre]), prompt: "Pick a genre...", class:"form-control" %>
       <%= submit_tag "Search!", class: "btn btn-ghost ml-0 mt-2" %>
     <% end %>
 
@@ -19,12 +19,14 @@
     <div class="card-body mt-2">
     <% @videos.each do |video| %>
       <div class="row">
-        <% if current_user.videos.find_by_id(video.id) %>
-        <i class="fas fa-heart p-2" style="color:#EF0914"></i>
-        <% end %>
-        <input type="checkbox" name=array[<%= video.id%>] class="m-2">
         <label for=<%= video.title %> class="card-title"> <span id="name"> <%= video.title %> 🎬 </span> </label>
       </br> <p class="ml-2"> <em> Genre: </em> <%= video.genre %> </p>
+      <% if !current_user.videos.include?(video) %>
+        <input type="checkbox" name=array[<%= video.id%>] class="m-2">
+        <% end %>
+      <% if current_user.videos.find_by_id(video.id) %>
+        <i class="fas fa-heart p-2" style="color:#EF0914"></i>
+        <% end %>
       </div>
     <% end %>
     </div>

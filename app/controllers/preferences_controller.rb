@@ -10,7 +10,7 @@ skip_before_action :verify_authenticity_token
     @genres = Genre.all
     @videos = Video.all.limit(0)
     if params[:genre].present?
-      @genre = Genre.find(params[:genre])
+      @genre = Genre.where(name: params[:genre]).first
       @videos = @genre.videos.sort.first(20)
     end
     @count = @videos.count
@@ -21,7 +21,9 @@ skip_before_action :verify_authenticity_token
     @user = current_user
     @videos = Video.all
     params['array'].each do |video_id, value|
+      if !Preference.where(video: Video.find(video_id)).exists?
       Preference.create(video: Video.find(video_id), user: @user)
+      end
     end #redirect to dashboard - Sara
     redirect_to matches_preferences_path
     # @preferences.save!
