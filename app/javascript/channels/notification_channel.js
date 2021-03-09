@@ -7,7 +7,7 @@ const initNotificationCable = () => {
 
     consumer.subscriptions.create({ channel: "NotificationChannel", id: id }, {
       received(data) {
-        const messagesContainer = document.getElementById('messages');
+        const messagesContainer = document.getElementById('chat');
         if (!messagesContainer) {
         console.log(data); // called when data is broadcast in the cable
         const notificationPlace = document.getElementById('notification-place')
