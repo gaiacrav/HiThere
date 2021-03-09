@@ -20,7 +20,7 @@
             <p class="card-user"> <strong> Age: </strong> <%= user.age %> years old </p>
                 <div id="scrollbar-videos">
                 <% user.videos_in_common_with(current_user).each do |video|%>
-                <p class="card-user mr-3"> ❤️ <%= video.title%> </p>
+                <p class="card-user mr-3"> <i class="fas fa-heart mr-1" style="color:#EF0914;"> </i> <%= video.title%> </p>
                 <%end%>
               </div>
           </div>
