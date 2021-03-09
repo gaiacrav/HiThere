@@ -29,17 +29,6 @@
   padding-top: 15px;
 }
 
-#step{
-  font-size: 24px;
-  color: #e50914;
-  font-family: 'RocknRoll One', 'sans-serif';
-  padding-bottom: 10px;
-}
-
-#steps{
-  padding: 10px;
-}
-
 // HiThere name on navbar
 #company-name {
   color: white;
@@ -57,6 +46,13 @@
   margin-top: 0px;
 }
 
+#step{
+  font-size: 24px;
+  color: #e50914;
+  font-family: 'RocknRoll One', 'sans-serif';
+  padding-bottom: 10px;
+}
+
 #steps{
   display: flex;
   justify-content: space-around;
@@ -65,11 +61,19 @@
   padding: 10px;
 }
 
+// not used
 #line-home {
   width: 100%;
   margin-bottom: 10px;
   margin-top: 10px;
   background-color: #424242;
   height: 2px;
+}
+
+// used
+#line-home-small{
+  background-color: #424242;
+  height: 3px;
+  width: 150px;
 }
 

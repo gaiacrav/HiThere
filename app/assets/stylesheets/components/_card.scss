@@ -1,11 +1,12 @@
 .cards {
   display: grid;
-  height: 240px;
+  height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-top: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-category {
