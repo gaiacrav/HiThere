@@ -14,27 +14,30 @@
     <p> <strong>Please select a <span id="name"> genre❗️ </span></strong> </p>
   <%end%>
 
+
   <% if @videos.count > 0 %>
   <form action="/preferences" method="post">
-    <div class="card-body mt-2">
+    <div class="cards-poster">
     <% @videos.each do |video| %>
-      <div class="row">
-        <label for=<%= video.title %> class="card-title"> <span id="name"> <%= video.title %> 🎬 </span> </label>
-      </br> <p class="ml-2"> <em> Genre: </em> <%= video.genre %> </p>
-      <% if !current_user.videos.include?(video) %>
-        <input type="checkbox" name=array[<%= video.id%>] class="m-2">
-        <%= image_tag video.poster_url, style: 'width: 100px; height: 140px' %>
+        <div class="card" style="width: 18rem;">
+          <% if !current_user.videos.include?(video) %>
+            <input type="checkbox" name=array[<%= video.id%>] class="card-image-top">
+            <%= image_tag video.poster_url, class: "poster" %>
+          <% end %>
+          <% if current_user.videos.find_by_id(video.id) %>
+            <i class="fas fa-heart p-2" style="color:#EF0914"></i>
+            <%= image_tag video.poster_url, class: "poster" %>
+          <% end %>
+          <div class="card-body">
+            <label for=<%= video.title %> class="card-text"> <span id="name"> <%= video.title %> 🎬 </span> </label>
+            </br> <p class="card-text ml-2"> <em> Genre: </em> <%= video.genre %> </p>
+          </div>
+        </div>
         <% end %>
-      <% if current_user.videos.find_by_id(video.id) %>
-        <i class="fas fa-heart p-2" style="color:#EF0914"></i>
-        <% end %>
-      </div>
-    <% end %>
     </div>
-    <input type="submit" value="Submit" class="btn btn-ghost ml-0 mt-1">
+      <input type="submit" value="Submit" class="btn btn-ghost ml-0 mt-1">
   </form>
   <% end %>
-<div>
+  </div>
 </div>
-
 
