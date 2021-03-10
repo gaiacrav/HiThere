@@ -1,0 +1,82 @@
+.cards-poster{
+  display: grid;
+  grid-gap: 10px;
+  justify-content: space-around;
+  width: 900px;
+
+}
+
+.card{
+  background-color: black;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: rgb(27, 27, 27);
+  border-color: #e50914;
+}
+
+.poster{
+  width: 100px;
+  height: 140px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.card-image-top{
+  position: absolute;
+  margin-top: 10px;
+  right: 10px;
+  top: 0px;
+  width: 40px;
+}
+
+
+// choose movie preferences new
+
+#movie-choice {
+  width: 900px;
+  height: 100%;
+  background-color: black;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-poster {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-poster {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-poster {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-poster {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-poster {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
