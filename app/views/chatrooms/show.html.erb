@@ -1,14 +1,25 @@
 <div class="chat-container">
 
   <div class="chat-main-header">
-    <h1 class="header-chat"> <%= @chatroom.user.first_name%> </h1>
-    <% if @chatroom.user.photo.attached? %>
-      <%= cl_image_tag @chatroom.user.photo.key, height: 400, width: 400, crop: :fill, class: "avatar-user-show-friend" %>
-    <% else %>
-      <%= image_tag("fakepic.png")%>
-    <% end %>
+    <div class="chat-main-header-right">
+      <% if @chatroom.user.photo.attached? %>
+        <%= cl_image_tag @chatroom.user.photo.key, height: 200, width: 200, crop: :fill, class: "avatar-user-show-friend" %>
+      <% else %>
+        <%= image_tag("fakepic.png")%>
+      <% end %>
+      <h1 class="header-chat"> <%= @chatroom.user.first_name%> </h1>
+    </div>
+    <div class="chat-main-header-left">
+      <% if @chatroom.creator.photo.attached? %>
+        <%= cl_image_tag @chatroom.creator.photo.key, height: 200, width: 200, crop: :fill, class: "avatar-user-show-friend" %>
+      <% else %>
+        <%= image_tag("fakepic.png")%>
+      <% end %>
+      <h1 class="header-chat"> <%= @chatroom.creator.first_name%> </h1>
+    </div>
   </div>
   <div id="line"></div>
+
 
   <div id="chat" data-chatroom-id="<%= @chatroom.id %>">
     <div id="chat-scrollbar">

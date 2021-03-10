@@ -1,6 +1,6 @@
 <div class="user-show-container">
   <% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, class: "avatar-user-show" %>
+  <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, class: "avatar-user-show" %>
   <% else %>
   <%= image_tag("fakepic.png", class: "avatar-user-show") %>
   <% end %>
