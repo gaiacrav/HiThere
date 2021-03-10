@@ -23,6 +23,7 @@
       </br> <p class="ml-2"> <em> Genre: </em> <%= video.genre %> </p>
       <% if !current_user.videos.include?(video) %>
         <input type="checkbox" name=array[<%= video.id%>] class="m-2">
+        <%= image_tag video.poster_url, style: 'width: 100px; height: 140px' %>
         <% end %>
       <% if current_user.videos.find_by_id(video.id) %>
         <i class="fas fa-heart p-2" style="color:#EF0914"></i>

@@ -26,12 +26,14 @@ User.create!(first_name: "Lola", last_name: "Net", email: "lola@gmail.com", pass
 # parse CSV
 require 'csv'
 
+
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = 'db/top1000movies.csv'
+#filepath = 'db/top1000movies.csv'
+filepath ='db/movies_with_posters.csv'
 
 CSV.foreach(filepath, csv_options) do |row|
   puts "#{row["Title"]} | #{row["Genre"]} | #{row["Description"]} | #{row["Year"]} | #{row["Runtime (Minutes)"]}"
-  video = Video.create!(title: row["Title"], kind: "Movie")
+  video = Video.create!(title: row["Title"], kind: "Movie", poster_url: row ["Poster"])
 
   genres_string = row["Genre"]
   genres_string.split(",").each do |genre_name|

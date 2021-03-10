@@ -4,5 +4,6 @@ class VideosController < ApplicationController
   @videos = Video.all
  end
 
+
 end
 
