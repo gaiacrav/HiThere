@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
         render_to_string(partial: "components/notification", locals: { chatroom: @chatroom })
       )
 
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      # redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"
     end
