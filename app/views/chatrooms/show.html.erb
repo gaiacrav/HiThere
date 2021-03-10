@@ -7,7 +7,7 @@
       <% else %>
         <%= image_tag("fakepic.png")%>
       <% end %>
-      <h1 class="header-chat"> <%= @chatroom.user.first_name%> </h1>
+      <h1> <%= link_to "#{@chatroom.user.first_name}", user_path(@chatroom.user.id), class: "header-chat" %> </h1>
     </div>
     <div class="chat-main-header-left">
       <% if @chatroom.creator.photo.attached? %>
@@ -15,7 +15,7 @@
       <% else %>
         <%= image_tag("fakepic.png")%>
       <% end %>
-      <h1 class="header-chat"> <%= @chatroom.creator.first_name%> </h1>
+      <h1> <%= link_to "#{@chatroom.creator.first_name}", user_path(@chatroom.creator.id), class: "header-chat" %> </h1>
     </div>
   </div>
   <div id="line"></div>
