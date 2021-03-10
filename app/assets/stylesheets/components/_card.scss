@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  height: 210px;
+  //height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
   grid-template-columns: 1fr 1fr 1fr;
@@ -30,6 +30,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+  #home-instructions {
+    @media (min-width: 100px) and (max-width: 575px) {
+      width: 100vw;
+    }
+  }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
