@@ -1,0 +1,5 @@
+meta_product_name: "HiThere!"
+meta_title: "HiThere! - Meet your movie buddies!"
+meta_description: "Connect with movie enthusiasts and chat with them on your favorite movies!"
+meta_image: "HiThere.png" # should exist in `app/assets/images/`
+
