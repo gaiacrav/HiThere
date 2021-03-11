@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= meta_title %></title>
+    <title>HiThere!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="icon" type="image/png" href="/favicon.ico" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
+     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
-    <meta charset="utf-8">
 
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
@@ -30,7 +31,7 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body style="background-color: #000000">
