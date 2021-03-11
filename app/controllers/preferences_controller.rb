@@ -20,11 +20,12 @@ skip_before_action :verify_authenticity_token
 
   def create
     @user = current_user
-    #@videos = Video.all
+    if !params['array'].nil?
     params['array'].each do |video_id, value|
       if !current_user.videos.exists?(video_id)
         current_user.videos << Video.find(video_id)
       end
+    end
       #if !Preference.where(video: Video.find(video_id), user: current_user).exists?
       #Preference.create(video: Video.find(video_id), user: @user)
     end
