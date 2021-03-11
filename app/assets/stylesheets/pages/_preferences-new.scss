@@ -33,6 +33,17 @@
   width: 40px;
 }
 
+.fa-check-square{
+  position: absolute;
+  margin-top: 10px;
+  right: 10px;
+  top: 0px;
+  width: 40px;
+}
+
+.card-text{
+  font-size: 20px;
+}
 
 // choose movie preferences new
 
@@ -42,6 +53,7 @@
   background-color: black;
   padding: 15px;
   border-radius: 3px;
+  font-size: 20px;
 }
 
 

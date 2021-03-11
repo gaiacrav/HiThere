@@ -15,10 +15,10 @@
         <%= image_tag("fakepic.png")%>
       <% end %>
         <div class="card-product-infos">
-         <div>
+         <div id="card-user-scroll">
             <h2 class="card-user"> <%= user.first_name %> <%= user.last_name %> (<%= user.country %>) </h2>
             <p class="card-user"> <strong> You both like... </strong> </p>
-                <div id="scrollbar-videos">
+              <div id="scrollbar-videos">
                 <% user.videos_in_common_with(current_user).each do |video|%>
                 <p class="card-user mr-3"> <i class="fas fa-heart mr-1" style="color:#EF0914;"> </i> <%= video.title%> </p>
                 <%end%>
