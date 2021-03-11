@@ -25,12 +25,12 @@
             <%= image_tag video.poster_url, class: "poster" %>
           <% end %>
           <% if current_user.videos.find_by_id(video.id) %>
-            <i class="fas fa-heart p-2" style="color:#EF0914"></i>
+            <i class="fas fa-check-square" style="color: #EF0914"></i>
             <%= image_tag video.poster_url, class: "poster" %>
           <% end %>
           <div class="card-body">
             <label for=<%= video.title %> class="card-text"> <span id="name"> <%= video.title %> 🎬 </span> </label>
-            </br> <p class="card-text ml-2"> <em> Genre: </em> <%= video.genre %> </p>
+            </br> <p class="card-text"> <%= video.genre %> </p>
           </div>
         </div>
         <% end %>
